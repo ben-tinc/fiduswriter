@@ -111,6 +111,18 @@ export const bulkMenuModel = () => ({
             },
             disabled: overview => !overview.getSelected().length || overview.app.isOffline(),
             order: 7
+        },
+        {
+            title: gettext('Export selected as TEI'),
+            tooltip: gettext('Export the documents that have been selected as TEI/XML files.'),
+            action: overview => {
+                const ids = overview.getSelected()
+                if (ids.length) {
+                    overview.mod.actions.downloadTEIFiles(ids)
+                }
+            },
+            disabled: overview => !overview.getSelected().length,
+            order: 8
         }
     ]
 })

@@ -233,6 +233,22 @@ export const headerbarModel = () => ({
                         })
                     },
                     disabled: editor => editor.app.isOffline()
+                },
+                {
+                    title: gettext('TEI'),
+                    type: 'action',
+                    tooltip: gettext('Export the document to an TEI/XML file.'),
+                    order: 3,
+                    action: editor => {
+                        import("../../../exporter/tei").then(({exportTEI}) => {
+                            exportTEI(
+                                editor.getDoc({changes: 'acceptAllNoInsertions'}),
+                                editor.mod.db.bibDB,
+                                editor.mod.db.imageDB,
+                                editor.app.csl
+                            )
+                        })
+                    }
                 }
             ]
         },

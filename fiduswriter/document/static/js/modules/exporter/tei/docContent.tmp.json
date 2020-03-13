@@ -1,0 +1,424 @@
+{
+    "type": "article",
+    "attrs": {
+        "documentstyle": "elephant",
+        "tracked": false,
+        "citationstyle": "apa",
+        "citationstyles": [
+            "american-anthropological-association",
+            "apa",
+            "chicago-author-date",
+            "chicago-note-bibliography",
+            "harvard-cite-them-right",
+            "modern-language-association",
+            "nature",
+            "oxford-university-press-humsoc"
+        ],
+        "language": "en-US",
+        "languages": [
+            "af-ZA",
+            "sq-AL",
+            "ar",
+            "ast",
+            "be",
+            "br",
+            "bg",
+            "ca",
+            "ca-ES-Valencia",
+            "zh-CN",
+            "da",
+            "nl",
+            "en-AU",
+            "en-CA",
+            "en-NZ",
+            "en-ZA",
+            "en-GB",
+            "en-US",
+            "eo",
+            "fr",
+            "gl",
+            "de-DE",
+            "de-AU",
+            "de-CH",
+            "el",
+            "he",
+            "is",
+            "it",
+            "ja",
+            "km",
+            "lt",
+            "ml",
+            "nb-NO",
+            "nn-NO",
+            "fa",
+            "pl",
+            "pt-BR",
+            "pt-PT",
+            "ro",
+            "ru",
+            "tr",
+            "sr-SP-Cy",
+            "sr-SP-Lt",
+            "sk",
+            "sl",
+            "es",
+            "sv",
+            "ta",
+            "tl",
+            "uk"
+        ],
+        "papersize": "A4",
+        "papersizes": [
+            "A4",
+            "US Letter"
+        ],
+        "footnote_marks": [
+            "strong",
+            "em",
+            "link"
+        ],
+        "footnote_elements": [
+            "paragraph",
+            "heading1",
+            "heading2",
+            "heading3",
+            "heading4",
+            "heading5",
+            "heading6",
+            "figure",
+            "ordered_list",
+            "bullet_list",
+            "horizontal_rule",
+            "equation",
+            "citation",
+            "cross_reference",
+            "blockquote",
+            "table"
+        ],
+        "bibliography_header": {},
+        "template": "Standard Article",
+        "import_id": "standard-article",
+        "copyright": {
+            "holder": false,
+            "year": false,
+            "freeToRead": true,
+            "licenses": []
+        }
+    },
+    "content": [
+        {
+            "type": "title",
+            "attrs": {
+                "id": "title"
+            },
+            "content": [
+                {
+                    "type": "text",
+                    "text": "Mein Testdokument"
+                }
+            ]
+        },
+        {
+            "type": "heading_part",
+            "attrs": {
+                "title": "Subtitle",
+                "id": "subtitle",
+                "locking": false,
+                "language": false,
+                "optional": "hidden",
+                "hidden": true,
+                "help": false,
+                "initial": [
+                    {
+                        "type": "heading1",
+                        "attrs": {
+                            "id": "H6323428"
+                        }
+                    }
+                ],
+                "deleted": false,
+                "elements": [
+                    "heading1"
+                ],
+                "marks": [
+                    "strong",
+                    "em",
+                    "link"
+                ],
+                "metadata": "subtitle"
+            }
+        },
+        {
+            "type": "contributors_part",
+            "attrs": {
+                "title": "Authors",
+                "id": "authors",
+                "locking": false,
+                "language": false,
+                "optional": "hidden",
+                "hidden": false,
+                "help": false,
+                "initial": false,
+                "deleted": false,
+                "item_title": "Author",
+                "metadata": "authors"
+            },
+            "content": [
+                {
+                    "type": "contributor",
+                    "attrs": {
+                        "firstname": "Henning",
+                        "lastname": "Gebhard",
+                        "email": "henning.gebhard@googlemail.com",
+                        "institution": "Uni Trier, Deutschland"
+                    }
+                },
+                {
+                    "type": "contributor",
+                    "attrs": {
+                        "firstname": "Ben",
+                        "lastname": "Harding",
+                        "email": "none@example.com",
+                        "institution": "Discordian Society"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "richtext_part",
+            "attrs": {
+                "title": "Abstract",
+                "id": "abstract",
+                "locking": false,
+                "language": false,
+                "optional": "hidden",
+                "hidden": true,
+                "help": false,
+                "initial": false,
+                "deleted": false,
+                "elements": [
+                    "paragraph",
+                    "heading1",
+                    "heading2",
+                    "heading3",
+                    "heading4",
+                    "heading5",
+                    "heading6",
+                    "code_block",
+                    "figure",
+                    "ordered_list",
+                    "bullet_list",
+                    "horizontal_rule",
+                    "equation",
+                    "citation",
+                    "cross_reference",
+                    "blockquote",
+                    "footnote",
+                    "table"
+                ],
+                "marks": [
+                    "strong",
+                    "em",
+                    "link"
+                ],
+                "metadata": "abstract"
+            }
+        },
+        {
+            "type": "tags_part",
+            "attrs": {
+                "title": "Keywords",
+                "id": "keywords",
+                "locking": false,
+                "language": false,
+                "optional": "hidden",
+                "hidden": false,
+                "help": false,
+                "initial": false,
+                "deleted": false,
+                "item_title": "Keyword",
+                "metadata": "keywords"
+            },
+            "content": [
+                {
+                    "type": "tag",
+                    "attrs": {
+                        "tag": "DH"
+                    }
+                },
+                {
+                    "type": "tag",
+                    "attrs": {
+                        "tag": "Webdev"
+                    }
+                },
+                {
+                    "type": "tag",
+                    "attrs": {
+                        "tag": "TEI"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "richtext_part",
+            "attrs": {
+                "title": "Body",
+                "id": "body",
+                "locking": false,
+                "language": false,
+                "optional": false,
+                "hidden": false,
+                "help": false,
+                "initial": false,
+                "deleted": false,
+                "elements": [
+                    "paragraph",
+                    "heading1",
+                    "heading2",
+                    "heading3",
+                    "heading4",
+                    "heading5",
+                    "heading6",
+                    "code_block",
+                    "figure",
+                    "ordered_list",
+                    "bullet_list",
+                    "horizontal_rule",
+                    "equation",
+                    "citation",
+                    "cross_reference",
+                    "blockquote",
+                    "footnote",
+                    "table"
+                ],
+                "marks": [
+                    "strong",
+                    "em",
+                    "link"
+                ],
+                "metadata": false
+            },
+            "content": [
+                {
+                    "type": "paragraph",
+                    "attrs": {
+                        "track": []
+                    },
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "Dies ist der Beginn des Textbodies. Noch ein bisschen Blindtext."
+                        }
+                    ]
+                },
+                {
+                    "type": "heading1",
+                    "attrs": {
+                        "id": "H6987474",
+                        "track": []
+                    },
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "Eine Überschrift erster Ordnung"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "attrs": {
+                        "track": []
+                    },
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "Hier folgt weiterer Text. "
+                        },
+                        {
+                            "type": "text",
+                            "marks": [
+                                {
+                                    "type": "strong"
+                                }
+                            ],
+                            "text": "Außerdem"
+                        },
+                        {
+                            "type": "text",
+                            "text": " noch Text "
+                        },
+                        {
+                            "type": "text",
+                            "marks": [
+                                {
+                                    "type": "em"
+                                }
+                            ],
+                            "text": "mit zusätzlichem Markup"
+                        },
+                        {
+                            "type": "text",
+                            "text": "."
+                        }
+                    ]
+                },
+                {
+                    "type": "heading2",
+                    "attrs": {
+                        "id": "H9800221",
+                        "track": []
+                    },
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "Eine Überschrift zweiter Ordnung"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "attrs": {
+                        "track": []
+                    },
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "Und noch ein bisschen Text."
+                        },
+                        {
+                            "type": "footnote",
+                            "attrs": {
+                                "footnote": [
+                                    {
+                                        "type": "paragraph",
+                                        "attrs": {
+                                            "track": []
+                                        },
+                                        "content": [
+                                            {
+                                                "type": "text",
+                                                "marks": [
+                                                    {
+                                                        "type": "insertion",
+                                                        "attrs": {
+                                                            "user": 1,
+                                                            "username": "ben",
+                                                            "date": 26396140,
+                                                            "approved": true
+                                                        }
+                                                    }
+                                                ],
+                                                "text": "Eine Fußnote ohne Inhalt."
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+ <user>
+  <personID>1001</personID>
+  <title_selected>Herr</title_selected>
+  <formal_salutation>Sehr geehrter Herr %1</formal_salutation>
+  <gender>male</gender>
+  <title_short />
+  <academic_job_title>Dev</academic_job_title>
+  <title_combined>Dev</title_combined>
+  <name>Gebhard</name>
+  <firstname>Henning</firstname>
+  <email>s2hegebh@uni-trier.de</email>
+  <email2 />
+  <emailcc />
+  <organisation>Uni Trier</organisation>
+  <organisation2>DH</organisation2>
+  <address1>Elisabethstraße 25</address1>
+  <address2 />
+  <address3 />
+  <zip>04315</zip>
+  <city>Leipzig</city>
+  <state />
+  <countrycode>DE</countrycode>
+  <country>Germany</country>
+  <country_long>Deutschland</country_long>
+  <region>Western_Europe</region>
+  <phone />
+  <fax />
+  <homepage_url />
+  <nationality>German</nationality>
+  <dob>1986-01-06</dob>
+  <pob />
+  <memberID />
+  <status>admin,pc,author</status>
+  <username>gebhard</username>
+  <topics_of_reviewer_pc />
+  <external_remark />
+  <internal_remark />
+  <user_registration>2020-04-07 15:35:31</user_registration>
+  <account_type>normal</account_type>
+  <deleted>0</deleted>
+  <participant_registration_date />
+  <participant_status />
+  <participant_total />
+  <participant_amount_paid />
+  <participant_amount_open />
+  <participant_canceled />
+ </user>
+</users>
