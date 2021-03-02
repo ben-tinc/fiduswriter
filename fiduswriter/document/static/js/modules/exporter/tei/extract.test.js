@@ -83,13 +83,13 @@ test('try to extract non-existing footnotes', () => {
 test('extract footnotes', () => {
     const content = [{
         type: 'richtext_part',
-        attrs: { id: 'body' },
+        attrs: {id: 'body'},
         content: [
-            { type: 'footnote', attrs: {
-                footnote: [{ type: 'paragraph', content: [{ type: 'text', text: 'foo' }] }]
+            {type: 'footnote', attrs: {
+                footnote: [{type: 'paragraph', content: [{type: 'text', text: 'foo'}]}]
             }},
-            { type: 'footnote', attrs: {
-                footnote: [{ type: 'paragraph', content: [{ type: 'text', text: 'bar' }] }]
+            {type: 'footnote', attrs: {
+                footnote: [{type: 'paragraph', content: [{type: 'text', text: 'bar'}]}]
             }}
         ]
     }]
@@ -105,11 +105,11 @@ test('extract footnotes', () => {
 test('extract footnotes which are nested more deeply inside paragraph', () => {
     const content = [{
         type: 'richtext_part',
-        attrs: { id: 'body' },
+        attrs: {id: 'body'},
         content: [
             {
                 type: 'paragraph',
-                content: [ {
+                content: [{
                     type: 'footnote', attrs: {
                         footnote: [{type: 'paragraph', content: [{type: 'text', text: 'foo'}]}]
                     }
@@ -143,7 +143,7 @@ test('extract image IDs', () => {
             {
                 type: 'figure',
                 content: [
-                    { type: 'image', attrs: { image: 1 } }
+                    {type: 'image', attrs: {image: 1}}
                 ]
             }
         ]
@@ -159,13 +159,13 @@ test('extract image ID inside paragraph', () => {
         type: 'richtext_part',
         attrs: {id: 'body'},
         content: [{
-                type: 'paragraph',
-                content: [{
-                    type: 'figure',
-                    content: [
-                        { type: 'image', attrs: { image: 1 } }
-                    ]
-                }]
+            type: 'paragraph',
+            content: [{
+                type: 'figure',
+                content: [
+                    {type: 'image', attrs: {image: 1}}
+                ]
+            }]
         }]
     }]
     const doc = dummyDoc(content)

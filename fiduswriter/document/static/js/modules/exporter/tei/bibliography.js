@@ -1,12 +1,11 @@
-import {wrap, tag} from './utils'
+import {wrap} from './utils'
 import {text} from './convert'
-
 
 
 function name(pers) {
     return wrap('name',
         wrap('surname',
-            pers.family.map(text).join(''))+wrap('forename', pers.given.map(text).join(''))
+            pers.family.map(text).join('')) + wrap('forename', pers.given.map(text).join(''))
     )
 }
 
@@ -14,7 +13,7 @@ function name(pers) {
 function biblItem(item) {
     const f = item.fields
     const authors = f.author?.map(a => wrap('author', name(a))).join('') || ''
-    let title = f.title?.filter(it => it.type==='text')
+    let title = f.title?.filter(it => it.type === 'text')
         .map(t => text(t))
         .join('')
     title = title ? wrap('title', title) : ''
@@ -32,17 +31,17 @@ function biblItem(item) {
     let editors = f.editor?.map(pers => wrap('editor', name(pers))).join('') || ''
     editors += f.editora?.map(pers => wrap('editor', name(pers))).join('') || ''
     let publisher = f.publisher?.map(p => {
-        return p.filter(it => it.type==='text')
-                .map(t => text(t))
-                .join('')
-        }).join('')
+        return p.filter(it => it.type === 'text')
+            .map(t => text(t))
+            .join('')
+    }).join('')
     publisher = publisher ? wrap('publisher', publisher) : ''
     const edition = f.edition ? wrap('edition', f.edition.map(t => text(t)).join('')) : ''
     const place = f.location
-        ? wrap('pubPlace', f.location.map(a => a.map(t => text(t)).join('') ).join('') )
+        ? wrap('pubPlace', f.location.map(a => a.map(t => text(t)).join('')).join(''))
         : ''
     const content = [authors, title, date, doi, url, isbn, issn, journaltitle, issue,
-            edition, editors, publisher, place].filter(c => c!=='').join('\n')
+        edition, editors, publisher, place].filter(c => c !== '').join('\n')
     return content ? wrap('bibl', content) : ''
 }
 
@@ -55,5 +54,5 @@ function bibliography(bibDB) {
     )
 }
 
-export { name, biblItem }
+export {name, biblItem}
 export default bibliography

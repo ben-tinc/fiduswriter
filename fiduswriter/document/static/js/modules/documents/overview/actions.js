@@ -391,12 +391,12 @@ export class DocumentOverviewActions {
         ).then(
             () =>
                 ids.forEach(id => {
-                    const doc = this.documentOverview.documentList.find(entry => entry.id===id)
+                    const doc = this.documentOverview.documentList.find(entry => entry.id === id)
                     import("../../exporter/tei").then(({exportTEI}) => {
                         exportTEI(
                             doc,
-                            {db:doc.bibliography},
-                            {db:doc.images},
+                            {db: doc.bibliography},
+                            {db: doc.images},
                             this.documentOverview.app.csl
                         )
                     })

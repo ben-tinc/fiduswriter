@@ -8,7 +8,7 @@
  */
 
 import extract from "./extract"
-import {tag,wrap} from "./utils"
+import {tag, wrap} from "./utils"
 import {header} from "./templates/header"
 import {body} from "./templates/body"
 import {back} from "./templates/back"
@@ -43,8 +43,7 @@ function text(item) {
         const result = item.marks.reduce((previous, current) => {
             if (current.type === 'em') {
                 return wrap('hi', previous, {rend: 'italic'})
-            }
-            else if (current.type === 'strong') {
+            } else if (current.type === 'strong') {
                 return wrap('hi', previous, {rend: 'bold'})
             }
             return previous
@@ -106,19 +105,18 @@ function richText(richTextContent, imgDB) {
 
         /* Handle table nodes and all their contents */
         if (item.type === 'table') {
-            let caption = '';
+            let caption = ''
             if (item.attrs.caption) {
-                const captionTEI = item.content.find(it => it.type==='table_caption').content
-                                      .map(it => f(it)).join('')
+                const captionTEI = item.content.find(it => it.type === 'table_caption').content
+                    .map(it => f(it)).join('')
                 caption = wrap('head', captionTEI)
             }
-            const tableBody = item.content.find(it => it.type==='table_body').content
+            const tableBody = item.content.find(it => it.type === 'table_body').content
             const tableTEI = tableBody.map(row => {
                 const rowTEI = row.content.map(it => {
                     if (it.type === 'table_header') {
                         return wrap('cell', it.content.map(c => f(c)).join(''), {role: 'label'})
-                    }
-                    else if (it.type === 'table_cell') {
+                    } else if (it.type === 'table_cell') {
                         return wrap('cell', it.content.map(c => f(c)).join(''))
                     }
                     return ''
@@ -126,7 +124,7 @@ function richText(richTextContent, imgDB) {
                 const isLabel = row.content.filter(c => c.type === 'table_header').length === row.content.length
                 return isLabel ? wrap('row', rowTEI, {role: 'label'}) : wrap('row', rowTEI)
             }).join('')
-            return wrap('table', caption+tableTEI)
+            return wrap('table', caption + tableTEI)
         }
 
         if (item.type.startsWith('table_')) {
@@ -144,22 +142,22 @@ function richText(richTextContent, imgDB) {
 
         if (item.type === 'ordered_list') {
             const items = item.content.filter(c => c.type === 'list_item')
-                                      .map(li => {
-                                          const liTEI = li.content.map(ic => f(ic)).join('')
-                                          return wrap('item', liTEI)
-                                      })
-                                      .join('')
+                .map(li => {
+                    const liTEI = li.content.map(ic => f(ic)).join('')
+                    return wrap('item', liTEI)
+                })
+                .join('')
             // Note that earlier versions of the TEI guidelines recommended
             // <list type="numbered"> instead.
             return wrap('list', items, {rend: 'numbered'})
         }
         if (item.type === 'bullet_list') {
             const items = item.content.filter(c => c.type === 'list_item')
-                                      .map(li => {
-                                          const liTEI = li.content.map(ic => f(ic)).join('')
-                                          return wrap('item', liTEI)
-                                      })
-                                      .join('')
+                .map(li => {
+                    const liTEI = li.content.map(ic => f(ic)).join('')
+                    return wrap('item', liTEI)
+                })
+                .join('')
             // Note that earlier versions of the TEI guidelines recommended
             // <list type="bulleted"> instead.
             return wrap('list', items, {rend: 'bulleted'})
@@ -170,7 +168,9 @@ function richText(richTextContent, imgDB) {
         }
 
         if (item.type === 'paragraph') {
-            if (item.content === undefined) { return tag('lb') }
+            if (item.content === undefined) {
+                return tag('lb')
+            }
             return wrap('p', item.content.map(c => f(c)).join(''))
         }
 
@@ -178,7 +178,7 @@ function richText(richTextContent, imgDB) {
             const order = parseInt(item.type.slice(-1))
             // Whenever the new heading is of a higher order (i.e. the number is smaller)
             // or the same as the preceding heading, we need to close our previous div(s).
-            const closing = (order <= divLevel) ? '</div>'.repeat(divLevel+1-order) : ''
+            const closing = (order <= divLevel) ? '</div>'.repeat(divLevel + 1 - order) : ''
             divLevel = order
             const opening = `<div rend="DH-Heading" type="div${order}">`
             const head = wrap('head', item.content.map(c => f(c)).join(''))
@@ -233,5 +233,5 @@ function convert(slug, docContents, bibDB, imgDB) {
     return TEITemplate(slug, TEIheader, TEIbody, TEIback)
 }
 
-export { richText, text, footnotesContent }
+export {richText, text, footnotesContent}
 export default convert

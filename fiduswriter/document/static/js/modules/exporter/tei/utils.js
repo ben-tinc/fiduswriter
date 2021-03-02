@@ -1,7 +1,7 @@
 /**
  * Create a string of an empty XML tag.
  */
-function tag(tagName, attrs={}) {
+function tag(tagName, attrs = {}) {
     if (Object.keys(attrs).length) {
         const attributes = Object.entries(attrs)
             .map(([key, value]) => `${key}="${value}"`)
@@ -14,7 +14,7 @@ function tag(tagName, attrs={}) {
 /**
  * Wrap content in a string with opening and closing XML tags.
  */
-function wrap(tagName, content, attrs={}) {
+function wrap(tagName, content, attrs = {}) {
     if (Object.keys(attrs).length) {
         const attributes = Object.entries(attrs)
             .map(([key, val]) => `${key}="${val}"`)
@@ -24,4 +24,4 @@ function wrap(tagName, content, attrs={}) {
     return `<${tagName}>${content}</${tagName}>`
 }
 
-export { tag, wrap }
+export {tag, wrap}

@@ -23,7 +23,7 @@ export function exportTEI(doc, bibDB, imageDB, csl) {
     const tei = enc.encode(convert(slug, docContent, bibDB, imageDB))
 
     const images = extractImageIDs(docContent, imageDB)
-    const files = images.map( id => {
+    const files = images.map(id => {
         const entry = imageDB.db[id]
         return {
             filename: entry.image.split('/').pop(),
