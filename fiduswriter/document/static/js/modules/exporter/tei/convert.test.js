@@ -1,9 +1,25 @@
 import {
+    authors,
     richText,
     text,
     footnotesContent
 } from './convert'
 
+
+test('render a single author', () => {
+    const data = [{
+        firstname: 'Ben',
+        lastname: 'H',
+        email: 'ben@example.com',
+        institution: 'PPOE'
+    }]
+    expect(authors(data)).toBe(
+        '<author><name>' +
+        '<surname>H</surname><forename>Ben</forename></name>' +
+        '<affiliation>PPOE</affiliation>' +
+        '<email>ben@example.com</email>' +
+        '</author>')
+})
 
 test('render text-only node', () => {
     expect(

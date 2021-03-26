@@ -18,10 +18,10 @@ import bibliography from "./bibliography"
 
 function authors(data) {
     const tei = data.map(({firstname, lastname, institution, email}) => {
-        const name = wrap('persName', `${wrap('surname', lastname)} ${wrap('forename', firstname)}`)
+        const name = wrap('name', `${wrap('surname', lastname)}${wrap('forename', firstname)}`)
         const inst = wrap('affiliation', institution)
         email = wrap('email', email)
-        return wrap('author', `${name} ${inst} ${email}`)
+        return wrap('author', `${name}${inst}${email}`)
     }).join('\n')
     return tei
 }
@@ -233,5 +233,5 @@ function convert(slug, docContents, bibDB, imgDB) {
     return TEITemplate(slug, TEIheader, TEIbody, TEIback)
 }
 
-export {richText, text, footnotesContent}
+export {authors, richText, text, footnotesContent}
 export default convert
