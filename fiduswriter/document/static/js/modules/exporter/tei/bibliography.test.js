@@ -120,7 +120,7 @@ test('bibl entry with an URL', () => {
             url: "http://jtei.revues.org/774"
         }
     }
-    const expected = '<bibl><ref type="url" target="http://jtei.revues.org/774">'
+    const expected = '<bibl><ref target="http://jtei.revues.org/774">'
                  + 'http://jtei.revues.org/774'
                  + '</ref></bibl>'
     expect(biblItem(data)).toBe(expected)

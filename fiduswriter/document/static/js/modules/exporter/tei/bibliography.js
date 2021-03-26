@@ -19,7 +19,7 @@ function biblItem(item) {
     title = title ? wrap('title', title) : ''
     const date = f.date ? wrap('date', f.date, {when: f.date}) : ''
     const doi = f.doi ? wrap('idno', f.doi, {type: 'DOI'}) : ''
-    const url = f.url ? wrap('ref', f.url, {type: 'url', target: f.url}) : ''
+    const url = f.url ? wrap('ref', f.url, {target: f.url}) : ''
     const isbn = f.isbn ? wrap('idno', f.isbn.map(t => text(t)).join(''), {type: 'ISBN'}) : ''
     const issn = f.issn ? wrap('idno', f.issn.map(t => text(t)).join(''), {type: 'ISSN'}) : ''
     const journaltitle = f.journaltitle
