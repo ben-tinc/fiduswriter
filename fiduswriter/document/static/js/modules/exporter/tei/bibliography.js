@@ -50,7 +50,7 @@ function bibliography(bibDB) {
     const items = Object.values(bibDB.db).map(item => biblItem(item)).join('\n')
     return wrap('div',
         wrap('listBibl', `${head}\n${items}`),
-        {type: 'bibliogr'}
+        {type: 'bibliography'}
     )
 }
 
