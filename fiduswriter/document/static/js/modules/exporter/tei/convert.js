@@ -180,7 +180,7 @@ function richText(richTextContent, imgDB) {
             // or the same as the preceding heading, we need to close our previous div(s).
             const closing = (order <= divLevel) ? '</div>'.repeat(divLevel + 1 - order) : ''
             divLevel = order
-            const opening = `<div rend="DH-Heading" type="div${order}">`
+            const opening = `<div rend="DH-Heading">`
             const head = wrap('head', item.content.map(c => f(c)).join(''))
             return `${closing}${opening}${head}`
         }

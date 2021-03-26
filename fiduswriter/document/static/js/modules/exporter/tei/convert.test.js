@@ -77,7 +77,7 @@ test('render heading with a single piece of text', () => {
             type: 'heading1',
             content: [{type: 'text', text: 'hello'}],
         }])
-    ).toBe('<div rend="DH-Heading" type="div1"><head>hello</head></div>')
+    ).toBe('<div rend="DH-Heading"><head>hello</head></div>')
 })
 
 test('render heading with italic text', () => {
@@ -91,7 +91,7 @@ test('render heading with italic text', () => {
                 ],
             },
         ])
-    ).toBe('<div rend="DH-Heading" type="div1"><head>hello <hi rend="italic">world</hi></head></div>')
+    ).toBe('<div rend="DH-Heading"><head>hello <hi rend="italic">world</hi></head></div>')
 })
 
 test('render heading and following paragraph', () => {
@@ -106,7 +106,7 @@ test('render heading and following paragraph', () => {
                 content: [{type: 'text', text: 'world'}],
             },
         ])
-    ).toBe('<div rend="DH-Heading" type="div1"><head>hello</head><p>world</p></div>')
+    ).toBe('<div rend="DH-Heading"><head>hello</head><p>world</p></div>')
 })
 
 test('render second order heading', () => {
@@ -115,7 +115,7 @@ test('render second order heading', () => {
             type: 'heading2',
             content: [{type: 'text', text: 'hello'}],
         }])
-    ).toBe('<div rend="DH-Heading" type="div2"><head>hello</head></div></div>')
+    ).toBe('<div rend="DH-Heading"><head>hello</head></div></div>')
 })
 
 test('render two headings', () => {
@@ -131,8 +131,8 @@ test('render two headings', () => {
             },
         ])
     ).toBe(
-        '<div rend="DH-Heading" type="div1"><head>first</head>' +
-    '<div rend="DH-Heading" type="div2"><head>second</head></div></div>'
+        '<div rend="DH-Heading"><head>first</head>' +
+    '<div rend="DH-Heading"><head>second</head></div></div>'
     )
 })
 
@@ -143,8 +143,8 @@ test('render consecutive headings', () => {
             {type: 'heading1', content: [{type: 'text', text: 'another'}]},
         ])
     ).toBe(
-        '<div rend="DH-Heading" type="div1"><head>one</head></div>' +
-    '<div rend="DH-Heading" type="div1"><head>another</head></div>'
+        '<div rend="DH-Heading"><head>one</head></div>' +
+    '<div rend="DH-Heading"><head>another</head></div>'
     )
 })
 
