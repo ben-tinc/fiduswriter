@@ -68,7 +68,7 @@ function richText(richTextContent, imgDB) {
             return text(item)
         }
         if (item.type === 'equation') {
-            return wrap('formula', item.attrs.equation, {notation: 'tex'})
+            return wrap('formula', `$${item.attrs.equation}$`, {notation: 'tex'})
         }
 
         /* Another base case, since the actual content of the footnote
@@ -149,7 +149,7 @@ function richText(richTextContent, imgDB) {
                 .join('')
             // Note that earlier versions of the TEI guidelines recommended
             // <list type="numbered"> instead.
-            return wrap('list', items, {rend: 'numbered'})
+            return wrap('list', items, {rend: 'ordered'})
         }
         if (item.type === 'bullet_list') {
             const items = item.content.filter(c => c.type === 'list_item')

@@ -212,7 +212,7 @@ test('render equations', () => {
                 }
             }
         ])
-    ).toBe('<formula notation="tex">A=\\pi\\cdot r^2</formula>')
+    ).toBe('<formula notation="tex">$A=\\pi\\cdot r^2$</formula>')
 })
 
 test('render a simple figure', () => {
@@ -487,7 +487,7 @@ test('render a simple ordered list', () => {
             ]
         }
     ]
-    const expected = '<list rend="numbered">'
+    const expected = '<list rend="ordered">'
                  + '<item><p>erster Listenpunkt.</p></item>'
                  + '<item><p>zweiter Listenpunkt</p></item>'
                  + '</list>'
